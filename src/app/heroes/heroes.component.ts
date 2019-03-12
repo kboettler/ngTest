@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Student } from '../student';
+import { StudentService } from '../student.service';
 
 @Component({
   selector: 'app-heroes',
@@ -9,16 +9,16 @@ import { HeroService } from '../hero.service';
 })
 export class HeroesComponent implements OnInit {
 
-  heroes: Hero[];
+  heroes: Student[];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: StudentService) { }
 
   ngOnInit() {
     this.getHeroes();
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes()
+    this.heroService.getStudents()
       .subscribe(heroes => this.heroes = heroes);
   }
 
@@ -26,15 +26,15 @@ export class HeroesComponent implements OnInit {
     name = name.trim();
     if (!name) { return; }
 
-    this.heroService.addHero({ name } as Hero)
+    this.heroService.addStudent({ name } as Student)
       .subscribe(hero => {
         this.heroes.push(hero);
       });
   }
 
-  delete(hero: Hero): void {
+  delete(hero: Student): void {
     this.heroes = this.heroes.filter(h => h !== hero);
-    this.heroService.deleteHero(hero).subscribe();
+    this.heroService.deleteStudent(hero).subscribe();
   }
 
 }
