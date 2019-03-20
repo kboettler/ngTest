@@ -14,7 +14,7 @@ const httpOptions = {
 })
 
 export class StudentService {
-  private readonly studentUrl = 'api/students'; // URL to web api
+  private readonly studentUrl = 'https://localhost:5001/api/student'; // URL to web api
 
   constructor(
     private readonly http: HttpClient,
