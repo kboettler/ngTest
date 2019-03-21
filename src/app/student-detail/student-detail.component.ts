@@ -23,7 +23,7 @@ export class StudentDetailComponent implements OnInit {
   }
 
   getStudent(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.studentService.getStudent(id)
       .subscribe(student => this.student = student);
   }
