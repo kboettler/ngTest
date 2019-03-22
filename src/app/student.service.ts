@@ -45,7 +45,11 @@ export class StudentService {
   }
 
   addStudent(student: Student): Observable<Student> {
-    return this.http.post<Student>(this.studentUrl, student, httpOptions).pipe(
+    const s = new Student();
+    s.id = '00000000-0000-0000-0000-000000000000';
+    s.name = student.name;
+
+    return this.http.post<Student>(this.studentUrl, s, httpOptions).pipe(
       tap((newStudent: Student) => this.log(`added student with id=${newStudent.id}`)),
       catchError(this.handleError<Student>('addStudent'))
     );
