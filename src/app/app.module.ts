@@ -3,24 +3,24 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { StudentDetailComponent } from './student-detail/student-detail.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { StudentSearchComponent } from './student-search/student-search.component';
-import { StudentsComponent } from './students/student.component';
+import { EmployeeSearchComponent } from './employee-search/employee-search.component';
+import { EmployeesComponent } from './employees/employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentsComponent,
-    StudentDetailComponent,
+    EmployeesComponent,
+    EmployeeDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    StudentSearchComponent
+    EmployeeSearchComponent
   ],
   imports: [
     BrowserModule,

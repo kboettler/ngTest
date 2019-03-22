@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Student } from '../student';
-import { StudentService } from '../student.service';
+import { Employee } from '../employee';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,17 +10,17 @@ import { StudentService } from '../student.service';
 
 export class DashboardComponent implements OnInit {
 
-  students: Student[] = [];
+  employees: Employee[] = [];
 
-  constructor(private readonly studentService: StudentService) { }
+  constructor(private readonly employeeService: EmployeeService) { }
 
   ngOnInit() {
-    this.getStudents();
+    this.getEmployees();
   }
 
-  getStudents(): void {
-    this.studentService.getStudents()
-      .subscribe(heroes => this.students = heroes.slice(1, 5));
+  getEmployees(): void {
+    this.employeeService.getEmployees()
+      .subscribe(employees => this.employees = employees.slice(1, 5));
   }
 
 }
