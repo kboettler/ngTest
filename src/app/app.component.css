@@ -1,18 +1,16 @@
 /* AppComponent's private CSS styles */
-h1 {
-  font-size: 1.2em;
-  color: #999;
-  margin-bottom: 0;
+div {
+  background-color: lightgray;
 }
-h2 {
-  font-size: 2em;
-  margin-top: 0;
-  padding-top: 0;
+
+nav {
+  padding: 10px;
+  background: hsla(0, 0%, 0%, .6)
 }
+
 nav a {
   padding: 5px 10px;
   text-decoration: none;
-  margin-top: 10px;
   margin-right: 10px;
   display: inline-block;
   background-color: #eee;
@@ -27,4 +25,12 @@ nav a:hover {
 }
 nav a.active {
   color: #039be5;
+}
+
+.router {
+  padding: 20px;
+}
+
+.messages {
+  padding: 50px;
 }

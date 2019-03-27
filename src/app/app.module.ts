@@ -9,9 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { EmployeeSearchComponent } from './employee-search/employee-search.component';
 import { EmployeesComponent } from './employees/employee.component';
+import { UtoRequestsComponent } from './uto-requests/uto-requests.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { EmployeesComponent } from './employees/employee.component';
     EmployeeDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    EmployeeSearchComponent
+    EmployeeSearchComponent,
+    UtoRequestsComponent
   ],
   imports: [
     BrowserModule,

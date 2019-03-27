@@ -1,0 +1,22 @@
+.request {
+    padding: 10px 20px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #607D8B;
+    color: white
+}
+
+li {
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
+    width: fit-content;
+}
+
+span {
+    font-weight: bold;
+}

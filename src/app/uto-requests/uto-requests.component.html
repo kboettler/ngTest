@@ -1,0 +1,14 @@
+<div *ngIf="employee">
+
+  <h2>UTO Requests</h2>
+
+  <ul class="requests">
+    <li *ngFor="let request of requests">
+      <div class="request">
+        <div>Date: <span>{{request.day | date}}</span></div>
+        <div>Hours: <span>{{request.hours}}</span></div>
+      </div>
+    </li>
+  </ul>
+
+</div>

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../employee';
-import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,17 +8,8 @@ import { EmployeeService } from '../employee.service';
 
 export class DashboardComponent implements OnInit {
 
-  employees: Employee[] = [];
-
-  constructor(private readonly employeeService: EmployeeService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.getEmployees();
   }
-
-  getEmployees(): void {
-    this.employeeService.getEmployees()
-      .subscribe(employees => this.employees = employees.slice(1, 5));
-  }
-
 }

@@ -6,7 +6,7 @@ import { MessageService } from './message.service';
 import { catchError, map, tap } from 'rxjs/operators';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
 @Injectable({
@@ -39,8 +39,8 @@ export class EmployeeService {
 
   updateEmployee(employee: Employee): Observable<any> {
     return this.http.put(this.employeeUrl, employee, httpOptions).pipe(
-        tap(_ => this.log(`updated employee id=${employee.id}`)),
-        catchError(this.handleError<any>('updateEmployee'))
+      tap(_ => this.log(`updated employee id=${employee.id}`)),
+      catchError(this.handleError<any>('updateEmployee'))
     );
   }
 
@@ -65,9 +65,11 @@ export class EmployeeService {
   searchEmployees(term: string): Observable<Employee[]> {
     if (!term.trim()) {
       return of([]);
+    } else if (term.trim() === '*') {
+      return this.getEmployees();
     }
 
-    const options = {params: new HttpParams().set('name', term)};
+    const options = { params: new HttpParams().set('name', term) };
 
     return this.http.get<Employee[]>(this.employeeUrl, options).pipe(
       tap(_ => this.log(`found employees matching "${term}`)),

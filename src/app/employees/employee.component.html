@@ -1,23 +1,26 @@
-<h2>My Employees</h2>
-
-<div>
-  <label>employee name:
-    <input #employeeName />
-  </label>
-</div>
-
-<button 
-  class="button"
-  (click)="add(employeeName.value); employeeName.value=''">
-  add
-</button>
+<h2>All Employees</h2>
 
 <ul class="employees">
   <li *ngFor="let employee of employees">
     <a routerLink="/detail/{{employee.id}}" class='badge'>
-        {{employee.name}}
+      {{employee.name}}
     </a>
-    <button class="delete" title="delete employee"
-      (click)="delete(employee)">x</button>
+    <button class="delete" title="delete employee" (click)="delete(employee)">x</button>
   </li>
 </ul>
+
+<div class="new-employee">
+  <label>Create New Employee</label>
+
+  <div class="add">
+    <div>
+      <label>name:
+        <input #employeeName />
+      </label>
+    </div>
+
+    <button id="addbutton" (click)="add(employeeName.value); employeeName.value=''">
+      add
+    </button>
+  </div>
+</div>

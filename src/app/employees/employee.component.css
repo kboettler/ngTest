@@ -1,18 +1,28 @@
-/* HeroesComponent's private CSS styles */
+h2 {
+  margin: 0 1em;
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+}
+
 .employees {
-  margin: 0 0 2em 0;
+  margin: 1em 2em;
   list-style-type: none;
   padding: 0;
   width: 15em;
+  max-height: 1000px;
+  scroll-behavior: auto;
 }
 .employees li {
   position: relative;
   cursor: pointer;
   background-color: #EEE;
-  margin: .5em;
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
+  margin: .5em auto;
 }
 
 .employees li:hover {
@@ -68,6 +78,27 @@ button.delete {
   position: relative;
   left: 235px;
   top: -32px;
+  display: inline-block;
   background-color: gray !important;
   color: white;
+}
+
+.new-employee {
+  margin: 0 20px;
+}
+
+.add {
+  margin: 2px;
+  width: 300px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#addbutton {
+  display: block;
+  margin-right: 5px;
+  margin-left: auto;
+  margin-top: 5px
 }
