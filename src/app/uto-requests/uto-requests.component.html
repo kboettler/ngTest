@@ -5,8 +5,9 @@
   <ul class="requests">
     <li *ngFor="let request of requests">
       <div class="request">
-        <div>Date: <span>{{request.day | date}}</span></div>
-        <div>Hours: <span>{{request.hours}}</span></div>
+        <div class="request-date">Date: <span>{{request.day | date}}</span></div>
+        <div class="request-hours">Hours: <span>{{request.hours}}</span></div>
+        <button class="request-delete" (click)="deleteRequest(request)">x</button>
       </div>
     </li>
   </ul>
