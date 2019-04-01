@@ -27,14 +27,14 @@ export class EmployeesComponent implements OnInit {
     if (!name) { return; }
 
     this.employeeService.addEmployee({ name } as Employee)
-      .subscribe(hero => {
-        this.employees.push(hero);
+      .subscribe(e => {
+        this.employees.push(e);
       });
   }
 
-  delete(hero: Employee): void {
-    this.employees = this.employees.filter(h => h !== hero);
-    this.employeeService.deleteEmployee(hero).subscribe();
+  delete(employee: Employee): void {
+    this.employees = this.employees.filter(h => h !== employee);
+    this.employeeService.deleteEmployee(employee).subscribe();
   }
 
 }

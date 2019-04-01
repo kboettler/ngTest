@@ -11,4 +11,23 @@
     </li>
   </ul>
 
+  <div class="uto-container">
+    <label class="uto-header">New Request</label>
+
+    <mat-form-field class="uto-body">
+      <input matInput [matDatepicker]="inputDate" placeholder="Date" [(ngModel)]="selectedDate" [min]="minimumDate">
+      <mat-datepicker-toggle matSuffix [for]="inputDate"></mat-datepicker-toggle>
+      <mat-datepicker #inputDate></mat-datepicker>
+    </mat-form-field>
+
+    <div class="uto-footer-left">
+      <mat-radio-group [(ngModel)]="selectedHours">
+        <mat-radio-button class="radio-button" [value]=4>4 Hours</mat-radio-button>
+        <mat-radio-button class="radio-button" [value]=8>8 Hours</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <button class="uto-footer-right" (click)="createRequest()">Create</button>
+  </div>
+
 </div>

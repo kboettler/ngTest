@@ -22,13 +22,30 @@ export class UtoRequestService {
     private readonly messageService: MessageService) { }
 
   getRequestsForEmployee(employeeId: number): Observable<UtoRequest[]> {
-    const options = {params: new HttpParams().set('employeeId', employeeId.toString())};
+    const options = { params: new HttpParams().set('employeeId', employeeId.toString()) };
 
     return this.http.get<UtoRequest[]>(this.requestUrl, options)
       .pipe(
         tap(_ => this.log(`fetched requests for employee id=${employeeId}`)),
         catchError(this.handleError<UtoRequest[]>('getRequestsForEmployee', []))
       );
+  }
+
+  createNewRequest(request: UtoRequest): Observable<UtoRequest> {
+    return this.http.post<UtoRequest>(this.requestUrl, request, httpOptions)
+      .pipe(
+        tap(_ => this.log(`created new request for employee id=${request.employeeId}`)),
+        catchError(this.handleError<UtoRequest>('createNewRequest', request))
+      );
+  }
+
+  removeRequest(request: number): Observable<UtoRequest> {
+    const url = `${this.requestUrl}/${request}`;
+
+    return this.http.delete<UtoRequest>(url, httpOptions).pipe(
+      tap(_ => this.log(`removed request id=${request}`)),
+      catchError(this.handleError<UtoRequest>('removeRequest'))
+    );
   }
 
   private log(message: string): void {

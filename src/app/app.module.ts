@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmployeeSearchComponent } from './employee-search/employee-search.component';
 import { EmployeesComponent } from './employees/employee.component';
 import { UtoRequestsComponent } from './uto-requests/uto-requests.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { UtoRequestsComponent } from './uto-requests/uto-requests.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
